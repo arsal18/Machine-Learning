@@ -27,7 +27,7 @@ accuracy = metrics.accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
 
 # Export the decision tree to a dot file
-export_graphviz(clf, out_file='tree.dot', feature_names=X.columns)
+export_graphviz(clf, out_file='tree.dot', feature_names=X.columns, class_names=clf.classes_)
 
 # Convert the dot file to a PNG image
 !dot -Tpng tree.dot -o tree.png
